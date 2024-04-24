@@ -9,7 +9,7 @@ void main(List<String> arguments) {
     dynamic dynamicVar = 'hello world';
     dynamicVar = 1;
     dynamicVar = true;
-  int num1 = 4;
+  int num1 = 5;
   double num2 = 11.5;
 
   bool isEvenAndPositive = num1.isEven && !num2.isNegative ;
@@ -19,4 +19,14 @@ void main(List<String> arguments) {
   myString?.length;
 
   print('${num2} ${num1} ${isEvenAndPositive} ${dynamicVar} ${myString?.length}');
+
+  switch(num1) {
+    case 4: {
+      print("it's number four");
+      break;
+    }
+
+    default:
+    print("It's not four");
+  }
 }
