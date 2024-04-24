@@ -6,9 +6,8 @@ void main(List<String> arguments) {
 
   // myFunction2(10, 11, "Yvenne Santos");
 
-final exPlusFive = intFunction((int x) {
-  return x + x;
-})(5);
+// 5 + 5
+final exPlusFive = intFunction((int x)  => (x * 2))(3);
 
   print(exPlusFive);
 }
@@ -29,7 +28,9 @@ myFunction2 (int x, int y,[String? name = "Andro Eugenio"]) {
   print("$x $y $name");
 }
 
-int Function(int) intFunction(int Function(int) f) {
+typedef FunctionThatHaveAParameterAndReturnsInt = int Function(int);
+
+ FunctionThatHaveAParameterAndReturnsInt intFunction(FunctionThatHaveAParameterAndReturnsInt f) {
   return (int x) {
     return f(f(x));
   };
