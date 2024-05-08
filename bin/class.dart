@@ -14,7 +14,25 @@ void main(List<String> arguments) {
   final staticAdmin = User.admin();
 
   staticAdmin.signOut();
+
+  final human = new Human("Andro" );
+  final robot = new Robot("335MS17");
+
+  robot.hello("Guys", robot.model);
+  human.hello("Guys", human.name);
   
+}
+
+@immutable
+class Person {
+  final String name;
+
+  Person(name): this.name =  name;
+
+  Person copyWith({String? name}) {
+    return new Person(name);
+  }
+
 }
 
 abstract class User {
@@ -75,7 +93,9 @@ class RegularClass { // any class can be use as interface
 
   RegularClass(this.myField);
 
-  int get myProperty => 123;
+  int get myProperty {
+    return 32;
+  }
 
   String getSomeString() {
     return 'hello';
@@ -84,21 +104,25 @@ class RegularClass { // any class can be use as interface
 }
 
 
-class NewRegularClass implements RegularClass {
-  @override
-  String getSomeString() {
-    // TODO: implement getSomeString
-    throw UnimplementedError();
+mixin greet {
+  void hello (String to, [String? from]) {
+
+   if (from != null && from.isNotEmpty) {
+      print("Hello $to, my name is $from");
+    } else {
+      print("Hello $to");
+    }
   }
+}
 
-  @override
-  // TODO: implement myField
-  int get myField => throw UnimplementedError();
+class Human with greet {
+  final String name;
+  Human(String name): this.name = name;
+}
 
-  @override
-  // TODO: implement myProperty
-  int get myProperty => throw UnimplementedError();
-
+class Robot with greet {
+  final String model;
+  Robot(String model): this.model = model;
 }
 
 abstract class DataReader<T> {
