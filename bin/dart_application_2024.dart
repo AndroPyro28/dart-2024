@@ -1,6 +1,8 @@
 import 'dart:ffi';
-
-import 'package:dart_application_2024/dart_application_2024.dart' as dart_application_2024;
+import 'dart:html';
+import 'dart:io';
+import 'dart:svg';
+part  "string-methods.dart";
 
 enum AccountType {
   free, premium, vip

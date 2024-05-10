@@ -1,4 +1,4 @@
-import "string-methods.dart";
+import "dart_application_2024.dart";
 void main(List<String> arguments) {
   // String formattedName = formatName("AnDrO", "eUgeNiO");
   // String formattedName = myFunc(onTap: formatName);
